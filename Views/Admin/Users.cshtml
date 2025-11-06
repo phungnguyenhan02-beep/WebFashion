@@ -1,0 +1,38 @@
+﻿﻿@model IEnumerable<LT_WebThoiTrang.Models.UserAdminViewModel>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+
+
+
+
+<h2>Danh sách người dùng</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Người dùng</th>
+            <th>Tài khoản người dùng</th>
+            <th>Tên người dùng</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ IP</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserID</td>
+                <td>@user.Email</td>
+                <td>@user.Username</td>
+                <td>@user.Address</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.IPAddress</td>
+            </tr>
+        }
+    </tbody>
+</table>
+>
+

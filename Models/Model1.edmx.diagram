@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11253fcc643041b3a3c72068b530c82b" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="WebThoiTrangModel.AddressUser" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Category" Width="1.5" PointX="0.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Color" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.OrderDetail" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Order" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Payment" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.ProductColor" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.ProductPromotion" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Product" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.ProductSize" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Promotion" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Size" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.Stock" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.User" Width="1.5" PointX="1.5" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_AddressUser_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_Orders_AddressUser" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductColors_Colors" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_OrderDetails_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_Payments_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductColors_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductPromotions_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductPromotions_Promotions" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductSizes_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_Stock_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductSizes_Sizes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.ImageProduct" Width="1.5" PointX="0.875" PointY="10.375" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ImageProduct_Product" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.ProductStock" Width="1.5" PointX="8.25" PointY="4.375" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductStock_Color" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductStock_Product" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_ProductStock_Size" />
+        <EntityTypeShape EntityType="WebThoiTrangModel.InventoryLog" Width="1.5" PointX="10.5" PointY="4.625" />
+        <AssociationConnector Association="WebThoiTrangModel.FK_InventoryLog_ProductStock" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

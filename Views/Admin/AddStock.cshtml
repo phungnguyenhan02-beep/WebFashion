@@ -1,0 +1,71 @@
+﻿@model LT_WebThoiTrang.Models.InventoryAddStockViewModel
+
+@{
+    ViewBag.Title = "AddStock";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+
+<h2>AddStock</h2>
+
+<!-- jQuery và Bootstrap Bundle JS (bao gồm Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).on('submit', '#addStockForm', function (e) {
+        e.preventDefault(); // Ngăn form submit thông thường
+
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response.success) {
+                    // Đóng modal nếu cập nhật thành công
+                    $('#addStockModal').modal('hide');
+                    location.reload(); // Tải lại trang để cập nhật dữ liệu tồn kho
+                } else {
+                    // Nếu có lỗi, hiển thị lại nội dung của Partial View (giữ modal mở)
+                    $('#addStockModal .modal-body').html(response);
+                }
+            },
+            error: function () {
+                alert("Đã xảy ra lỗi khi gửi dữ liệu.");
+            }
+        });
+    });
+</script>
+
+<h2>Nhập Kho</h2>
+
+@using (Html.BeginForm("AddStock", "Admin", FormMethod.Post, new { id = "addStockForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Thêm trường ẩn để gửi ProductStockID -->
+    @Html.HiddenFor(m => m.ProductStockID) <!-- Đảm bảo rằng ProductStockID có trong model và được bind đúng -->
+
+    <div class="form-group">
+        <label>Tên Sản Phẩm</label>
+        <p>@Model.ProductName</p>
+    </div>
+
+    <div class="form-group">
+        <label>Số Lượng Hiện Tại</label>
+        <p>@Model.CurrentStockQuantity</p>
+    </div>
+
+    <div class="form-group">
+        <label>Size</label>
+        <p>@Model.Size</p>
+    </div>
+
+    <div class="form-group">
+        <label for="QuantityAdded">Nhập Số Lượng Thêm Vào Kho</label>
+        @Html.TextBoxFor(m => m.QuantityAdded, new { @class = "form-control", placeholder = "Nhập số lượng" })
+        @Html.ValidationMessageFor(m => m.QuantityAdded, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Xác Nhận Nhập Kho</button>
+    <a href="@Url.Action("Inventory", "Admin")" class="btn btn-secondary">Hủy</a>
+}

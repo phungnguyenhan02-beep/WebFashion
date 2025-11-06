@@ -1,0 +1,312 @@
+﻿﻿@model LT_WebThoiTrang.Models.Product
+@{
+    ViewBag.Title = "ProductPage";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+<link rel="stylesheet" href="~/Content/Product_Page/container_productPage.css" />
+
+<div class="container product-page">
+    <div class="content row">
+        <div class="content-left col-xl-5 col-md-6 col-sm-12">
+            <div class="list-img">
+            </div>
+            <div class="img-main">
+                <img src="~/Image/product-image/@Model.ImageURL" />
+            </div>
+        </div>
+        <div class="content-mid col-xl-4 col-md-6 col-sm-12">
+            <div class="product-content">
+                <div class="product-des">
+                    <h3>@Html.DisplayFor(model => model.ProductName)</h3>
+                    <p class="description">@Html.DisplayFor(model => model.Description)</p>
+                    <p class="price">@Model.Price.ToString("#,##0").Replace(',', '.')₫</p>
+                </div>
+                <div class="select-size">
+                    <h6>CHỌN SIZE: </h6>
+                    <ul style="padding: 0" id="sizesList"></ul> <!-- Nơi các nút bấm sẽ được hiển thị -->
+                    <div class="instruct-size">
+                        <a>HƯỚNG DẪN CHỌN SIZE</a>
+                    </div>
+                    <div id="selectedSize"></div> <!-- Hiển thị size đã chọn -->
+                </div>
+                <div class="button-container">
+                    <a href="@Url.Action("BuyNow", "Carts", new { productId = Model.ProductID })" class="btn btn-buy">MUA NGAY</a>
+                    <a id="addToCartLink" style="color: white; font-size: 0.8rem; font-weight: bold;" href="/Carts/AddToCart?productId=@Model.ProductID&quantity=1" class="btn btn-add-cart">THÊM VÀO GIỎ</a>
+                </div>
+            </div>
+        </div>
+        <div class="content-right col-xl-3 col-md-12 col-sm-12">
+            <img src="~/image/product_page/AnhQuangCao.png" />
+        </div>
+    </div>
+    <div class="container-tabs">
+        <div class="tabs row">
+            <div class="tab-item active">
+                CHI TIẾT SẢN PHẨM
+            </div>
+            <div class="tab-item">
+                HƯỚNG DẪN CHỌN SIZE
+            </div>
+            <div class="tab-item">
+                HƯỚNG DẪN MUA HÀNG
+            </div>
+            <div class="tab-item">
+                CHÍNH SÁCH BẢO HÀNH
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active">
+                <h2></h2>
+                <p>
+                </p>
+            </div>
+            <div class="tab-pane">
+                <h2>Hướng dẫn chọn size</h2>
+                <p>
+                    <span>Cách 1: Dựa vào size của đôi giày bạn đang đi (chính xác 95%)</span> <br />
+                    Lấy ngay đôi giày của mỉnh ra xem lại nhé (anh em nào ít đá bóng có thể mượn của đồng đội hoặc anh hàng xóm :D ) <br />
+                    Nếu đang đi dòng giày vải (Thượng Đình, Thashoco, bata tàu warrior...) thì bạn phải tăng lên 1 size khi chọn <br />
+                    (Ví dụ: đi Thượng Đình 39 thì chọn size 40) <br />
+                    Nếu anh em đang đi giày nike, adidas, puma....thì anh em giữ nguyên size khi chọn <br />
+                    <span>Cách 2: Dựa vào bảng chọn size (chính xác 80%)</span> <br />
+                    Khi không có 1 đôi giày bên cạnh để đối chiếu thì anh em có thể lấy thước đo chân rồi so sánh với bảng sau <br />
+                    Cách chọn này sở dĩ được HANGMUSPORT đánh giá chính xác ở mức độ 80% nó phụ thuộc rất nhiều yếu tố như động tác đo của bạn có chuẩn xác tuyệt đối không, thước bạn sử dụng, mắt đọc có thẳng hay không và chân bạn và phom giày có hợp không, Có anh em chân bè, có anh em chân thon. <br />
+                    <img style="width: 600px;" src="~/Image/product_page/AnhDoSizeGiay.png" /> <br />
+                    <span>Cách 3: Gọi điện tới số hotline của HANG MU SPORT - 0123456789 để được nhân viên bên mình chọn giúp</span>
+                    Nếu với 2 cách trên vẫn chưa làm anh em hết băn khoăn thì anh em hãy gọi điện cho HANGMUSPORT luôn và ngay nhé. <br />
+                    Anh em lưu ý, trong tất cả các cách chọn size trên của HANGMUSPORT đưa ra đều chỉ mang tính chất hướng dẫn, để ae tham khảo. <br />
+                    Anh em mua giày tại HANGMUSPORT nếu có rộng chật thì sẽ luôn được đổi size thoải mái cho tới khi vừa thi thôi. Tuy nhiên điều này hoàn toàn xuất phát từ chính sách đặt lợi ích của khách hàng lên đầu của HANGMUSPORT chứ không phải vì HANGMUSPORT phải chịu trách nhiệm vì bài hướng dẫn chọn size này nhé.
+                </p>
+            </div>
+            <div class="tab-pane">
+                <h2>Hướng dẫn mua hàng</h2>
+                <p>
+                    Để mua hàng ngay lập tức anh em chỉ cần gọi đến 0123456789 và cung cấp tên sản phẩm cùng size cần mua. <br />
+                    Để mua hàng theo cách bình thường anh em làm theo các bước sau: <br />
+                    <span>Bước 1: Truy cập website và lựa chọn sản phẩm cần mua để mua hàng</span> <br />
+                    Anh em có thể sử dụng bộ lọc size để tìm nhanh hơn mẫu giày phù hợp với anh em nhất. Kết quả bộ lọc size vừa thể hiện chính xác các mẫu giày đáp ứng kích thước lại vừa tránh cho anh em phải lựa chọn quá nhiều mẫu giày trong khi có thể các mẫu đó đã / tạm thời hết hàng, hết size.
+                    Nhìn vào danh sách sản phẩm của bộ lọc size, anh em cũng khái quát được những màu sắc hiện có để lựa chọn một cách trực quan nhất. <br />
+                    <span>Bước 2: Click vào sản phẩm muốn mua</span> <br />
+                    Trang chi tiết sản phẩm sẽ hiện ra với các nút <span style="color: var(--my-color);">MUA NGAY</span> màu vàng ở bên cạnh ảnh sản phẩm. <br />
+                    Click vào nút MUA NGAY này và không quên chọn 1 trong các size có sẵn được liệt kê ngay bên trên. <br />
+                    Hệ thống sẽ lập tức chuyển đến trang giỏ hàng, liệt kê danh sách các sản phẩm anh em đã ngắm mua và đã ấn nút mua. <br />
+                    Nếu anh em đã chắc chắn về các sản phẩm đó, ấn nút THANH TOÁN để hoàn tất. <br />
+                    <span>Bước 3: Điền các thông tin để nhận đơn hàng</span> <br />
+                    Anh em điền lần lượt các thông tin vào các dòng. <br />
+                    Lựa chọn hình thức thanh toán và vận chuyển cho đơn hàng của mình. <br />
+                    Thông tin số điện thoại và địa chỉ chi tiết là cực kì quan trọng, nên bạn điền xong cần kiểm tra lại thật kĩ. <br />
+                    <span>Bước 4: Xem lại thông tin đặt hàng, điền chú thích và gửi đơn hàng</span> <br />
+                    Anh em xem lại thông tin đơn hàng, kiểm tra lại tên sản phẩm, giá từng loại sản phẩm và số lượng. <br />
+                    Anh em kiểm tra lại thông tin của người nhận hàng (SĐT, địa chỉ..) <br />
+                    Sau khi nhận được đơn hàng của anh em, HANG MU SPORT thường sẽ gọi điện ngay lập tức nên anh em hãy chú ý điện thoại nhé
+                </p>
+            </div>
+            <div class="tab-pane">
+                <h2>Chính sách đổi trả hàng</h2>
+                <p>
+                    <span>1. Đổi hàng theo nhu cầu anh em (đổi trả hàng vì không ưng ý)</span> <br />
+                    Tất cả mặt hàng đã mua không thể được hoàn trả nhưng có thể đổi trả trong vòng 07 ngày kể từ ngày nhận hàng tính theo thời điểm thông báo từ đối tác vận chuyển .
+                    HANGMUSPORT chỉ chấp nhận đổi hàng cho các sản phẩm thỏa mãn các điều kiện sau: <br />
+                    - Còn nguyên trạng như khi nhận được (bề mặt không bị nhăn nhúm, đinh giày không bị xước, mòn, ...) <br />
+                    - Đầy đủ các chi tiết, phụ kiện được tặng kèm theo đơn hàng (trong trường hợp chỉ đổi mẫu, đổi size thì có thể giữ lại phụ kiện, quà tặng). <br />
+                    - Giày nhất định phải chưa sử dụng kể cả chạy thử, thi đấu thử<br />
+                    Sau 7 ngày kể từ ngày anh em nhận hàng, HANGMUSPORT có quyền từ chối hỗ trợ cho những yêu cầu trên của . <br />
+                    <br />
+                    <span>2. Đổi trả không vì lý do chủ quan từ anh em (Hàng giao không mới, không nguyên vẹn, sai nội dung hoặc bị thiếu)</span> <br />
+                    <br />
+                    HANGMUSPORT khuyến khích anh em hàng phải kiểm tra tình trạng bên ngoài của gói hàng và sản phẩm trước khi thanh toán để đảm bảo rằng hàng hóa được giao đúng chủng loại, số lượng, màu sắc theo đơn đặt hàng và tình trạng bên ngoài không bị tác động. <br />
+                    <br />
+                    (Xin lưu ý những bước kiểm tra sâu hơn như xỏ thử giày, lên chân để đánh giá ... chỉ có thể được chấp nhận sau khi đơn hàng được thanh toán đầy đủ, nghĩa là đã chuyển khoản trước cho cửa hàng toàn bộ hoặc một phần giá trị đơn hàng hoặc đã thanh toán xong với bưu tá ngay tại lúc nhận hàng).  <br />
+                    <br />
+                    Trong trường hợp anh em đã thanh toán, nhận hàng và sau đó phát hiện hàng hóa không còn mới nguyên vẹn, sai nội dung hoặc thiếu hàng, xin vui lòng chụp ảnh sản phẩm và liên hệ với với HANGMUSPORT để chúng tôi được khắc phục thiếu sót (của shop hoặc đối tác vận chuyển) một cách nhanh nhất có thể.  <br />
+                    <br />
+                    Tuy nhiên với kinh nghiệm tổ chức bán hàng qua nhiều năm và với tác phong chuyên nghiệp của mình, HANGMUSPORT tự tin sai sót của chúng tôi là dưới 1% và thái độ tiếp nhận khi có sự cố luôn là hợp tác đặt lợi ích của anh em cùng uy tín của cửa hàng lên đầu..  <br />
+                    <span>3. Một số lưu ý khi gửi hàng đổi</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Related Products -->
+    <h3 class="heading">Sản phẩm liên quan</h3>
+    <div id="related-products-container" class="related-products row responsive" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <!-- Sản phẩm liên quan sẽ được thêm vào đây -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+    const productId = @Model.ProductID;
+document.addEventListener('DOMContentLoaded', function () {
+    const productId = @Model.ProductID;
+    let selectedSize = null;  // Biến lưu trữ size đã chọn
+
+    // Lấy danh sách kích thước
+    fetch(`/ProductPage/GetProductSizesWithoutQuantity?productId=${productId}`, {
+        method: 'GET',
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('sizesList').innerHTML = '';  // Xóa danh sách cũ
+
+            // Render danh sách kích thước sản phẩm dưới dạng các radio button (chỉ chọn được 1 kích thước)
+            if (data.sizes && data.sizes.length > 0) {
+                data.sizes.forEach(function (size) {
+                    const label = document.createElement('label');
+                    label.classList.add('style-everyList');
+
+                    const radio = document.createElement('input');
+                    radio.type = 'radio';  // Chuyển từ checkbox sang radio button
+                    radio.name = 'selectedSize';  // Đảm bảo chỉ có thể chọn 1 size
+                    radio.value = size;  // Gán giá trị size vào radio button
+
+                    const span = document.createElement('span');
+                    span.textContent = size;  // Hiển thị size trong label
+
+                    label.appendChild(radio);
+                    label.appendChild(span);
+
+                    radio.addEventListener('change', function () {
+                        if (radio.checked) {
+                            selectedSize = size;
+
+                            // Cập nhật liên kết "Thêm vào giỏ" với kích thước đã chọn
+                            document.getElementById('addToCartLink').href = `/Carts/AddToCart?productId=${productId}&quantity=1&size=${selectedSize}`;
+                        }
+                    });
+
+                    document.getElementById('sizesList').appendChild(label);  // Thêm label vào danh sách
+                });
+            } else {
+                const message = document.createElement('span');
+                message.textContent = 'Không có kích thước nào';
+                document.getElementById('sizesList').appendChild(message);
+            }
+        } else {
+            document.getElementById('sizesList').innerHTML = '';
+            alert(data.message || "Không tìm thấy sản phẩm.");
+        }
+    })
+    .catch(error => {
+        console.log("Error:", error); // Kiểm tra lỗi nếu có
+        alert("Đã xảy ra lỗi khi lấy danh sách kích thước sản phẩm.");
+    });
+
+    // Kiểm tra kích thước đã chọn trước khi thêm vào giỏ hoặc mua ngay
+    function checkSizeSelected() {
+        if (!selectedSize) {
+            alert("Vui lòng chọn kích thước trước khi thêm vào giỏ hàng hoặc mua ngay.");
+            return false;
+        }
+        return true;
+    }
+
+    // Gán sự kiện cho nút "MUA NGAY"
+    document.querySelector('.btn-buy').addEventListener('click', function(event) {
+        if (!checkSizeSelected()) {
+            event.preventDefault();  // Ngừng hành động nếu không chọn size
+        }
+    });
+
+    // Gán sự kiện cho nút "THÊM VÀO GIỎ"
+    document.getElementById('addToCartLink').addEventListener('click', function(event) {
+        if (!checkSizeSelected()) {
+            event.preventDefault();  // Ngừng hành động nếu không chọn size
+        }
+    });
+});
+
+
+
+
+// Hàm lấy sản phẩm liên quan
+function getRelatedProducts(productId) {
+    fetch('/ProductPage/GetRelatedProducts?productId=' + productId)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const relatedProductsContainer = document.getElementById('related-products-container');
+                relatedProductsContainer.innerHTML = ''; // Xóa các nội dung cũ
+                const relatedProducts = data.data.slice(0, 4); // Chỉ lấy 4 sản phẩm đầu tiên
+                // Lặp qua 4 sản phẩm liên quan và hiển thị chúng
+                relatedProducts.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product-item', 'col-xl-3', 'col-lg-4', 'col-sm-6', 'col-12');
+
+                    // Tạo nội dung sản phẩm động
+                    productElement.innerHTML = `
+                        <a style="color: black; text-decoration: none;" href="/ProductPage/ProductPage/${product.ProductID}">
+                            <div class="product-image">
+                               <img src="@Url.Content("~/Image/product-image/${product.ImageURL}")" alt="${product.ProductName}" />
+                            </div>
+                            <div class="product-content">
+                                 <h6>${product.ProductName}</h6>
+                                 <p class="description-product">${product.Description}</p>
+                                 <p class="price">${product.Price.toLocaleString('vi-VN')}₫</p>
+                             </div>
+                        </a>
+                    `;
+                    relatedProductsContainer.appendChild(productElement);
+                });
+            } else {
+                console.error('Lỗi:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Yêu cầu không thành công', error);
+        });
+}
+
+
+        // Gọi hàm lấy sản phẩm liên quan
+        getRelatedProducts(productId);
+
+        $('.responsive').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    </script>
+
+    <h3 class="heading">Brand</h3>
+    <div class="brands row">
+        <div class="col-lg-4 col-md-6 col-sm-12"><img src="~/Image/thumbnail/NikePack/NikeWhitePack(1).jpg" /></div>
+        <div class="col-lg-4 col-md-6 col-sm-12"><img src="~/Image/thumbnail/AdidasPack/AdidasWhitePack.jpg" /></div>
+        <div class="col-lg-4 col-md-6 col-sm-12"><img src="~/Image/thumbnail/PumaPack/PumaLightsOutPack.jpg" /></div>
+    </div>
+</div>

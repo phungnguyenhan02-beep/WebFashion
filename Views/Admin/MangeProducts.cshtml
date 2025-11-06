@@ -1,0 +1,163 @@
+﻿﻿@model IEnumerable<LT_WebThoiTrang.Models.ProductViewModelcs>
+@{
+    ViewBag.Title = "Quản lý sản phẩm ";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.bootstrap4.min.css">
+    <link href="~/Content/Admin/ManageProducts.css" rel="stylesheet">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Hiển thị thông báo lỗi hoặc thành công -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <h2>Quản lý sản phẩm</h2>
+
+    <table id="productTable" class="table table-striped display">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ảnh Chính</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Danh mục</th>
+                <th>Kích Thước/Tồn Kho</th>
+                <th>Ảnh phụ</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Product.ProductID</td>
+                    <td>
+                        <img src="~/image/product-image/@item.Product.ImageURL" alt="Ảnh chính" style="width:50px; height:auto;" />
+                    </td>
+                    <td>@item.Product.ProductName</td>
+                    <td>@string.Format("{0:N0}", item.Product.Price)</td>
+                    <td>@item.CategoryName</td>
+                    <td>
+                        @foreach (var stock in item.ProductStocks)
+                        {
+                            <div>
+                                Size: @stock.SizeValue, Kho: @stock.Quantity
+                            </div>
+                        }
+                    </td>
+                    <td>
+                        @foreach (var img in item.ExistingImages)
+                        {
+                            <img src="~/image/product-image/@img.ImageURL" alt="Ảnh phụ" style="width:50px; height:auto; margin-right: 5px;" />
+                        }
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EditProducts", "Admin", new { id = item.Product.ProductID })" class="btn btn-primary btn-action">Sửa</a>
+                        <button type="button" class="btn btn-danger btn-action" data-bs-toggle="modal" data-bs-target="#deleteProductModal"
+                                data-product-id="@item.Product.ProductID"
+                                data-product-name="@item.Product.ProductName">
+                            Xóa
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal Xóa Sản Phẩm -->
+    <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteProductModalLabel">Xóa sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Bạn có chắc muốn xóa sản phẩm này?</h3>
+                    <p><strong>Tên sản phẩm:</strong> <span id="productName"></span></p>
+                </div>
+                <div class="modal-footer">
+                    @using (Html.BeginForm("DeleteProducts", "Admin", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("id", "", new { id = "productID" })
+                        <button type="submit" class="btn btn-danger">Xóa</button>
+                    }
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <!-- DataTables và DataTables Buttons JS -->
+        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.bootstrap4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                // Khởi tạo DataTables với nút Xuất ra Excel
+                $('#productTable').DataTable({
+                    "pageLength": 5,
+                    "lengthMenu": [5, 10, 25, 50, 100],
+                    "language": {
+                        "search": "Tìm kiếm:",
+                        "paginate": {
+                            "previous": "Trước",
+                            "next": "Tiếp"
+                        },
+                        "lengthMenu": "Hiển thị _MENU_ dòng mỗi trang",
+                        "info": "Hiển thị từ _START_ đến _END_ của _TOTAL_ dòng",
+                        "infoEmpty": "Không có dữ liệu"
+                    },
+                    dom: 'Bfrtip', // Thêm phần điều khiển cho các nút
+                    buttons: [
+                        {
+                            extend: 'excelHtml5',
+                            text: 'Xuất ra Excel',
+                            className: 'btn btn-success mb-3', // Thêm lớp CSS cho nút
+                            title: 'QuanLySanPham', // Tên file xuất ra
+                            exportOptions: {
+                                columns: [0, 2, 3, 4, 5] // Chỉ xuất các cột ID, Tên sản phẩm, Giá, Danh mục, Kích Thước/Tồn Kho
+                            }
+                        }
+                    ]
+                });
+
+                // Xử lý modal xóa sản phẩm
+                $('#deleteProductModal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget);
+                    var productId = button.data('product-id');
+                    var productName = button.data('product-name');
+
+                    var modal = $(this);
+                    modal.find('#productID').val(productId);
+                    modal.find('#productName').text(productName);
+                });
+            });
+        </script>
+    }
+</body>
+
+

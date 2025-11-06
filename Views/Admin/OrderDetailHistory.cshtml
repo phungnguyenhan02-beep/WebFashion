@@ -1,0 +1,75 @@
+﻿@model LT_WebThoiTrang.Models.NewOrderHistoryViewModel
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng ";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+
+<h2>OrderDetailHistory</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/datatables.min.css">
+</head>
+<body>
+
+    <div class="mb-3">
+        <h3>Chi Tiết Đơn Hàng</h3>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Thông Tin Đơn Hàng</h6>
+        </div>
+        <div class="card-body">
+
+            <p><strong>Mã Đơn Hàng:</strong> @Model.OrderID</p>
+            <p><strong>Tài Khoản:</strong> @Model.Email</p>
+            <p>
+                <strong>Trạng Thái:</strong>
+                @if (Model.Status == 0)
+                {
+                    <span class="text-warning">Chưa Thanh Toán</span> <!-- Màu vàng cho "Chưa Thanh Toán" -->
+                }
+                else if (Model.Status == 1)
+                {
+                    <span class="text-success">Đã Thanh Toán</span> <!-- Màu xanh cho "Đã Thanh Toán" -->
+                }
+            </p>
+            <p><strong>Họ Tên:</strong> @Model.FullName</p>
+            <p><strong>Địa Chỉ:</strong> @Model.SpecificAddress, @Model.Block, @Model.Town, @Model.Province</p>
+            <p><strong>Số Điện Thoại:</strong> @Model.Phone</p>
+            <p><strong>Thời Gian Đặt Hàng:</strong> @Model.OrderDate.ToString("HH:mm:ss dd-MM-yyyy")</p>
+
+            <p><strong>Tổng Tiền:</strong> @Model.Price.ToString("#,0", new System.Globalization.CultureInfo("vi-VN")) đ</p>
+
+            <h6>Chi Tiết Sản Phẩm</h6>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Giá Sản Phẩm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var detail in Model.OrderDetails)
+                    {
+                        <tr>
+                            <td>@detail.ProductName</td>
+                            <td>@detail.Quantity</td>
+                            <td>@detail.UnitPrice.ToString("#,0", new System.Globalization.CultureInfo("vi-VN")) đ</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

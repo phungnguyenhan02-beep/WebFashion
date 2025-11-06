@@ -1,0 +1,310 @@
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll.config
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.pdb
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.exe
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.exe.config
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.rsp
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.exe
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.exe.config
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.rsp
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Managed.Core.targets
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.AppContext.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Collections.Immutable.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Console.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Globalization.Calendars.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Net.Http.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Net.Sockets.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Reflection.Metadata.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.ValueTuple.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XmlDocument.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.exe
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.exe.config
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.rsp
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe.config
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.Web.Infrastructure.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Helpers.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Mvc.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Razor.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Razor.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Helpers.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Mvc.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.AssemblyReference.cache
+D:\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.CoreCompileInputs.cache
+D:\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebTh.8FAF9879.Up2Date
+D:\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.dll
+D:\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.pdb
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll.config
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.pdb
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.exe
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.exe.config
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.rsp
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.exe
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.exe.config
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.rsp
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.AppContext.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Console.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Net.Http.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.ValueTuple.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.exe
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.exe.config
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.rsp
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Newtonsoft.Json.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Helpers.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Mvc.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Razor.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Newtonsoft.Json.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Razor.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Helpers.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Mvc.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.AssemblyReference.cache
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.CoreCompileInputs.cache
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebTh.8FAF9879.Up2Date
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.dll
+C:\Users\Do Nguyen Kha\Downloads\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.pdb
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll.config
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\LT_WebThoiTrang.pdb
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.exe
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.exe.config
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csc.rsp
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.exe
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.exe.config
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\csi.rsp
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Managed.Core.targets
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.AppContext.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Collections.Immutable.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Console.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Globalization.Calendars.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Net.Http.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Net.Sockets.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Reflection.Metadata.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.ValueTuple.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XmlDocument.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.exe
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.exe.config
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\vbc.rsp
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe.config
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.Web.Infrastructure.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Newtonsoft.Json.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Helpers.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Mvc.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Razor.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Newtonsoft.Json.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Razor.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Helpers.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\System.Web.Mvc.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.AssemblyReference.cache
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.CoreCompileInputs.cache
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebTh.8FAF9879.Up2Date
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.dll
+D:\web\WebBanQuanAo\WebBanQuanAo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.pdb
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll.config
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\LT_WebThoiTrang.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\LT_WebThoiTrang.pdb
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\csc.exe
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\csc.exe.config
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\csc.rsp
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\csi.exe
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\csi.exe.config
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\csi.rsp
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.Managed.Core.targets
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.AppContext.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Collections.Immutable.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Console.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Globalization.Calendars.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Net.Http.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Net.Sockets.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Reflection.Metadata.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.ValueTuple.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Xml.XmlDocument.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\vbc.exe
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\vbc.exe.config
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\vbc.rsp
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\roslyn\VBCSCompiler.exe.config
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\EntityFramework.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\Microsoft.Web.Infrastructure.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\Newtonsoft.Json.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Helpers.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Mvc.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Razor.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Webpages.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\EntityFramework.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\EntityFramework.SqlServer.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\Newtonsoft.Json.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Razor.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Webpages.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Webpages.Deployment.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Webpages.Razor.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Helpers.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\System.Web.Mvc.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.AssemblyReference.cache
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.csproj.CoreCompileInputs.cache
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\obj\Debug\LT_WebTh.8FAF9879.Up2Date
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.dll
+D:\WebBanQuanAoDemo\LT_WebThoiTrang\obj\Debug\LT_WebThoiTrang.pdb

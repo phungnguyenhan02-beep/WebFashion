@@ -1,0 +1,147 @@
+﻿﻿@model IEnumerable<LT_WebThoiTrang.Models.InventoryAddStockViewModel>
+
+@{
+    Layout = "~/Views/admin/Shared/_MasterLayout.cshtml";
+}
+
+<!-- Liên kết Font Awesome, CSS của Bootstrap 5 và DataTables -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.bootstrap4.min.css" />
+
+<h2>Quản Lý Tồn Kho</h2>
+
+<table id="inventoryTable" class="table table-bordered display">
+    <thead>
+        <tr>
+            <th>ID Sản Phẩm</th>
+            <th>StockID</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Ảnh Chính</th>
+            <th>Size</th>
+            <th>Màu Sắc</th>
+            <th>Kho Hiện Tại</th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductStockID</td>
+                <td>@item.ProductName</td>
+                <td>
+                    <img src="~/Image/product-image/@item.MainImageUrl" style="max-width: 50px; height: auto;" />
+                </td>
+                <td>@item.Size</td>
+                <td>@item.Color</td>
+                <td>@item.StockQuantity</td>
+                <td>
+                    <button type="button" class="btn btn-success btn-sm" onclick="openAddStockPopup(@item.ProductStockID)">
+                        Nhập Kho
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal Popup cho nhập kho -->
+<div class="modal fade" id="addStockModal" tabindex="-1" aria-labelledby="addStockModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStockModalLabel">Nhập kho</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Nội dung form nhập kho sẽ được tải động từ AJAX -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- jQuery, Bootstrap Bundle JS và DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.datatables.min.js"></script>
+
+    <!-- DataTables Buttons và JSZip để xuất ra Excel -->
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Khởi tạo DataTable với nút Xuất ra Excel
+            $('#inventoryTable').DataTable({
+                "pageLength": 10,
+                "lengthMenu": [5, 10, 25, 50, 100],
+                "language": {
+                    "search": "Tìm kiếm:",
+                    "paginate": {
+                        "previous": "Trước",
+                        "next": "Tiếp"
+                    },
+                    "lengthMenu": "Hiển thị _MENU_ dòng mỗi trang",
+                    "info": "Hiển thị từ _START_ đến _END_ của _TOTAL_ dòng",
+                    "infoEmpty": "Không có dữ liệu"
+                },
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        text: 'Xuất ra Excel',
+                        className: 'btn btn-success mb-3', // Thêm lớp CSS cho nút
+                        title: 'QuanLyTonKho', // Tên file xuất ra
+                        exportOptions: {
+                            columns: ':visible' // Chỉ xuất các cột hiển thị
+                        }
+                    }
+                ]
+            });
+        });
+
+        // Hàm mở popup nhập kho và tải nội dung từ server
+        function openAddStockPopup(productStockID) {
+            $.ajax({
+                url: '@Url.Action("AddStock", "admin")',
+                data: { id: productStockID },
+                success: function (result) {
+                    $('#addStockModal .modal-body').html(result);
+                    $('#addStockModal').modal('show');
+                },
+                error: function () {
+                    alert("Không Tải Nội Dung");
+                }
+            });
+        }
+
+        $(document).on('submit', '#addStockForm', function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function (response) {
+                    if (response.success) {
+                        $('#addStockModal').modal('hide');
+                        location.reload();
+                    } else {
+                        $('#addStockModal .modal-body').html(response.message || "Có lỗi xảy ra, vui lòng thử lại.");
+                    }
+                },
+                error: function () {
+                    alert("Đã xảy ra lỗi khi gửi dữ liệu.");
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,121 @@
+﻿﻿@model  LT_WebThoiTrang.Models.ProductViewModelcs
+@{
+    ViewBag.Title = "CreateProducts";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+<link href="~/Content/Admin/CreateProduct.css" rel="stylesheet" />
+<h1>CreateProducts</h1>
+</br>
+<head>
+    <h2>Thêm Sản Phẩm</h2>
+    </br>
+
+    <!-- Liên kết Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Các liên kết CSS của Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Bundle JS (bao gồm Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<div class="form-container">
+
+    @using (Html.BeginForm("CreateProducts", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+        <div class="form-group">
+            <label for="ProductName">Tên Sản Phẩm</label>
+            @Html.TextBoxFor(m => m.Product.ProductName, new { @class = "form-control", placeholder = "Điền Tên SP vào đây " })
+        </div>
+
+        <div class="form-group">
+            <label for="Price">Giá Bán</label>
+            @Html.TextBoxFor(m => m.Product.Price, new { @class = "form-control", placeholder = "Điền Giá Bán" })
+        </div>
+
+        <div class="form-group">
+            <label for="Description">Mô Tả Sản Phẩm</label>
+            @Html.TextAreaFor(m => m.Product.Description, new { @class = "form-control", rows = 3, placeholder = "Nội Dung" })
+        </div>
+
+        <div class="form-group">
+            <label for="Category">Loại Sản Phẩm</label>
+            @Html.DropDownListFor(model => model.Product.CategoryID, ViewBag.Categories as IEnumerable<SelectListItem>, "-- Chọn Loại Sản Phẩm --", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label for="Color">Màu Sắc</label>
+            @Html.DropDownListFor(m => m.SelectedColorID, new SelectList(Model.Colors, "ColorID", "ColorName"), "-- Chọn Màu --", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label for="Size">Size</label>
+            <div id="size-buttons" class="btn-group-toggle" data-toggle="buttons">
+                @foreach (var size in Model.Sizes)
+                {
+                    <label class="btn btn-outline-primary m-1">
+                        <input type="checkbox" name="SelectedSizeIDs" value="@size.SizeID" autocomplete="off"> @size.Size1
+                    </label>
+                }
+            </div>
+        </div>
+
+        <!-- Main Image Upload Section -->
+        <div class="form-group">
+            <label for="ImageFile">Ảnh Chính</label>
+            <input type="file" name="ImageFile" class="form-control-file" onchange="previewImage(this, '#mainImagePreview')" />
+            <div class="image-preview">
+                <img id="mainImagePreview" src="#" alt="Main Image Preview" style="display:none;" />
+            </div>
+        </div>
+
+
+        <!-- Additional Images Upload Section -->
+        <div class="form-group">
+            <label for="AdditionalImages">Ảnh Phụ</label>
+            <input type="file" name="AdditionalImages" multiple="multiple" class="form-control-file" onchange="previewAdditionalImages(this)" />
+            <div id="additionalImagesPreview" class="image-preview">
+                <!-- Additional images will be displayed here -->
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+        @*<button type="button" class="btn btn-secondary" onclick="history.back()">Back</button>*@
+    }
+</div>
+
+<!-- Đoạn mã JavaScript xem trước ảnh -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function previewImage(input, previewId) {
+        const file = input.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                $(previewId).attr('src', e.target.result).show();
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function previewAdditionalImages(input) {
+        $('#additionalImagesPreview').empty();
+        for (let i = 0; i < input.files.length; i++) {
+            const file = input.files[i];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = $('<img>').attr('src', e.target.result);
+                    $('#additionalImagesPreview').append(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    }
+</script>

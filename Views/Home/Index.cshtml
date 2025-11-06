@@ -1,0 +1,56 @@
+﻿@model LT_WebThoiTrang.Models.HomeViewModel
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Home/index.css" />
+
+<div class="home-banner">
+    <img src="~/Image/banner/main-banner.jpg" class="w-100" />
+</div>
+
+<section class="featured-section container mt-5">
+    <h3 class="section-title">Sản phẩm nổi bật</h3>
+    <div class="row">
+        @foreach (var item in Model.FeaturedProducts)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="@Url.Action("ProductPage", "ProductPage", new { productId = item.ProductID })" class="product-card">
+                    <img src="~/Image/product-image/@item.ImageURL" alt="@item.ProductName" class="product-img" />
+                    <div class="product-info">
+                        <h6>@item.ProductName</h6>
+                        <p>@item.Price.ToString("#,##0").Replace(',', '.')₫</p>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</section>
+
+<section class="new-section container mt-5">
+    <h3 class="section-title">Hàng mới về</h3>
+    <div class="row">
+        @foreach (var item in Model.NewProducts)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="@Url.Action("ProductPage", "ProductPage", new { productId = item.ProductID })" class="product-card">
+                    <img src="~/Image/product-image/@item.ImageURL" alt="@item.ProductName" class="product-img" />
+                    <div class="product-info">
+                        <h6>@item.ProductName</h6>
+                        <p>@item.Price.ToString("#,##0").Replace(',', '.')₫</p>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</section>
+
+<section class="brand-section container mt-5">
+    <h3 class="section-title">Thương hiệu</h3>
+    <div class="row">
+        <div class="col-md-4"><img src="~/Image/thumbnail/NikePack/NikeWhitePack(1).jpg" /></div>
+        <div class="col-md-4"><img src="~/Image/thumbnail/AdidasPack/AdidasWhitePack.jpg" /></div>
+        <div class="col-md-4"><img src="~/Image/thumbnail/PumaPack/PumaLightsOutPack.jpg" /></div>
+    </div>
+</section>

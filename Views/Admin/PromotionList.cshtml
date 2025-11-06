@@ -1,0 +1,45 @@
+﻿﻿@model IEnumerable<LT_WebThoiTrang.Models.Promotion>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+
+<h2>Danh sách chương trình khuyến mãi</h2>
+
+<p>
+    <a href="@Url.Action("AddPromotion", "Admin")" class="btn btn-success">Thêm chương trình khuyến mãi mới</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên chương trình</th>
+            <th>Mô tả</th>
+            <th>Số tiền giảm</th>
+            <th>Phần trăm giảm</th>
+            <th>Ngày bắt đầu</th>
+            <th>Ngày kết thúc</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var promotion in Model)
+        {
+            <tr>
+                <td>@promotion.PromotionID</td>
+                <td>@promotion.PromotionName</td>
+                <td>@promotion.Description</td>
+                <td>@string.Format("{0:C}", promotion.DiscountAmount)</td>
+                <td>@promotion.DiscountPercentage %</td>
+                <td>@promotion.StartDate.ToString("yyyy-MM-dd")</td>
+                <td>@promotion.EndDate.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a href="@Url.Action("EditPromotion", "Admin", new { id = promotion.PromotionID })" class="btn btn-primary">Sửa</a>
+                    <a href="@Url.Action("DeletePromotion", "Admin", new { id = promotion.PromotionID })" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa chương trình khuyến mãi này?');">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

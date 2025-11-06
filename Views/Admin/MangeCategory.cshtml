@@ -1,0 +1,122 @@
+﻿@model IEnumerable<LT_WebThoiTrang.Models.Category>
+
+@{
+    ViewBag.Title = "Quản lý loại sản phẩm ";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <h2>Quản lý sản phẩm </h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                  
+                </tr>
+            }
+        </tbody>
+    </table>
+    <!-- Modal để thêm loại sản phẩm mới -->
+    <div class="modal fade" id="createCategoryModal" tabindex="-1" aria-labelledby="createCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createCategoryModalLabel">Thêm Loại Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm("CreateCategory","Admin", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="mb-3">
+                            @Html.Label("CategoryName", "Tên loại sản phẩm", new { @class = "form-label" })
+                            @Html.TextBox("CategoryName", null, new { @class = "form-control", placeholder = "Nhập tên loại sản phẩm" })
+                            @Html.ValidationMessage("CategoryName", "", new { @class = "text-danger" })
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <input type="submit" value="Thêm" class="btn btn-primary" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCategoryModalLabel">Chỉnh sửa loại sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm("EditCategory", "Admin", FormMethod.Post, new { id = "editCategoryForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("CategoryID", "", new { id = "editCategoryID" })
+                        <div class="mb-3">
+                            @Html.Label("CategoryName", "Tên loại sản phẩm", new { @class = "form-label" })
+                            @Html.TextBox("CategoryName", null, new { @class = "form-control", id = "editCategoryName" })
+                            @Html.ValidationMessage("CategoryName", "", new { @class = "text-danger" })
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <input type="submit" value="Lưu" class="btn btn-primary" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts
+        {
+        <script>
+            $(document).ready(function () {
+                $(".editCategoryBtn").Click(function () {
+                    var categoryId = $(this).data("id");
+                    $.ajax({
+                        url: '@Url.Action("GetCategoryById","Admin")',
+                        type: "GET",
+                        data: { id: categoryId },
+                        success: function (data) {
+                            if (data) {
+                                $("#editCategoryID").val(data.CategoryID);
+                                $("#editCategoryName").val(data.CategoryName);
+                            }
+                            else {
+                                alert("Không tìm thấy dữ liệu danh mục .");
+                            }
+                        },
+                        error: function () {
+                            alert("Có lỗi xảy ra khi lấy dữ liệu danh mục ")
+                        }
+                    });
+                });
+            });
+        </script>
+        }
+</body>

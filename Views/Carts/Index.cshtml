@@ -1,0 +1,37 @@
+﻿@model List<LT_WebThoiTrang.Models.CartItem>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3>GIỎ HÀNG CỦA BẠN</h3>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Sản phẩm</th>
+                <th>Size</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Tổng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="~/Image/product-image/@item.ProductID .ImageURL" style="width:80px;" /></td>
+                    <td>@item.ProductID.ProductName</td>
+                    <td>@item.Size</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Product.Price.ToString("#,##0")₫</td>
+                    <td>@((item.Quantity * item.Product.Price).ToString("#,##0"))₫</td>
+                    <td><a href="@Url.Action("Remove", "Carts", new { id = item.Product.ProductID })" class="btn btn-danger btn-sm">Xóa</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Checkout" class="btn btn-success">Thanh toán</a>
+</div>

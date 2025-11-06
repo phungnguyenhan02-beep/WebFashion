@@ -1,0 +1,41 @@
+﻿
+﻿ /* OrderHistorySuccess.css */
+#dataTable th:nth-child(1), #dataTable td:nth-child(1) {
+    width: 20px; /* Độ rộng cột ID */
+}
+
+#dataTable th:nth-child(2), #dataTable td:nth-child(2) {
+    width: 150px; /* Độ rộng cột Tài Khoản */
+}
+
+#dataTable th:nth-child(3), #dataTable td:nth-child(3) {
+    width: 60px; /* Độ rộng họ tên */
+}
+
+#dataTable th:nth-child(4), #dataTable td:nth-child(4) {
+    width: 50px; /* Độ rộng cột Mã Đơn Hàng */
+}
+
+#dataTable th:nth-child(5), #dataTable td:nth-child(5) {
+    width: 150px; /* Độ rộng cột Địa chỉ */
+}
+
+#dataTable th:nth-child(6), #dataTable td:nth-child(6) {
+    width: 100px; /* Độ rộng cột Số Điện Thoại */
+}
+
+#dataTable th:nth-child(7), #dataTable td:nth-child(7) {
+    width: 120px; /* Độ rộng cột Tổng Tiền */
+}
+
+#dataTable th:nth-child(8), #dataTable td:nth-child(8) {
+    width: 90px; /* Độ rộng cột Trạng Thái */
+}
+
+#dataTable th:nth-child(9), #dataTable td:nth-child(9) {
+    width: 150px; /* Độ rộng cột Thời Gian */
+}
+
+#dataTable th:nth-child(10), #dataTable td:nth-child(10) {
+    width: 100px; /* Độ rộng cột Thao Tác */
+}

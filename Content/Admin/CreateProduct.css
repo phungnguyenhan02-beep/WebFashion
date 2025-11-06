@@ -1,0 +1,63 @@
+﻿
+﻿ /* Đặt form container tràn toàn màn hình */
+.form-container {
+    width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+/* Thiết lập các trường đầu vào và xem trước ảnh để chiếm đủ chiều rộng */
+.form-container .form-control,
+.form-container .form-control-file {
+    width: 100%;
+}
+
+/* CSS cho ảnh xem trước */
+.image-preview {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+    .image-preview img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-top: 10px;
+    }
+/* Style for the main image upload section */
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group .image-preview {
+    margin-top: 10px;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .form-group .image-preview img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+    }
+
+/* Style for additional images preview */
+#additionalImagesPreview {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}

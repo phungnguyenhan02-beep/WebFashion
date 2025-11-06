@@ -1,0 +1,50 @@
+﻿@model LT_WebThoiTrang.Models.ProductViewModelcs
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Admin/Shared/_MasterLayout.cshtml";
+}
+
+<h2>Thêm chương trình giảm giá</h2>
+
+@using (Html.BeginForm("AddPromotion", "Admin", FormMethod.Post))
+{
+    <div>
+        <label for="promotionName">Promotion Name</label>
+        @Html.TextBox("promotionName", null, new { @class = "form-control" })
+        @Html.ValidationMessage("promotionName")
+    </div>
+
+    <div>
+        <label for="description">Description</label>
+        @Html.TextArea("description", null, new { @class = "form-control" })
+        @Html.ValidationMessage("description")
+    </div>
+
+    <div>
+        <label for="discountAmount">Discount Amount</label>
+        @Html.TextBox("discountAmount", null, new { @class = "form-control" })
+        @Html.ValidationMessage("discountAmount")
+    </div>
+
+    <div>
+        <label for="discountPercentage">Discount Percentage</label>
+        @Html.TextBox("discountPercentage", null, new { @class = "form-control" })
+        @Html.ValidationMessage("discountPercentage")
+    </div>
+
+    <div>
+        <label for="startDate">Start Date</label>
+        @Html.TextBox("startDate", null, new { @class = "form-control", type = "date" })
+        @Html.ValidationMessage("startDate")
+    </div>
+
+    <div>
+        <label for="endDate">End Date</label>
+        @Html.TextBox("endDate", null, new { @class = "form-control", type = "date" })
+        @Html.ValidationMessage("endDate")
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Promotion</button>
+}
+

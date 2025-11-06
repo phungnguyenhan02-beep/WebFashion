@@ -1,0 +1,64 @@
+﻿
+﻿#productTable {
+    table-layout: fixed; /* Phân chia không gian đều cho các cột */
+    width: 100%;
+}
+
+#productTable th, #productTable td {
+}
+/* CSS cho các nút hành động */
+.btn-action {
+    font-family: 'Arial', sans-serif; /* Đặt font chữ cho nút */
+    font-size: 10px; /* Kích thước chữ */
+    font-weight: bold; /* Độ đậm của chữ */
+    color: #fff; /* Màu chữ */
+    padding: 8px 12px; /* Khoảng cách bên trong nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+}
+/* Định dạng màu sắc riêng cho từng nút */
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+/* Thiết lập độ rộng cho từng cột (điều chỉnh theo nhu cầu) */
+#productTable th:nth-child(1), #productTable td:nth-child(1) {
+    width: 2%; /* ID Sản Phẩm */
+}
+
+#productTable th:nth-child(2), #productTable td:nth-child(2) {
+    width: 10%; /* Ảnh Chính */
+}
+
+#productTable th:nth-child(3), #productTable td:nth-child(3) {
+    width: 15%; /* Tên sản phẩm */
+}
+
+#productTable th:nth-child(4), #productTable td:nth-child(4) {
+    width: 10%; /* Giá */
+}
+
+#productTable th:nth-child(5), #productTable td:nth-child(5) {
+    width: 5%; /* Danh mục */
+}
+
+#productTable th:nth-child(6), #productTable td:nth-child(6) {
+    width: 15%; /* Kích Thước & Tồn Kho */
+}
+
+#productTable th:nth-child(7), #productTable td:nth-child(7) {
+    width: 10%; /* Ảnh phụ */
+}
+
+#productTable th:nth-child(8), #productTable td:nth-child(8) {
+    width: 15%; /* Thao tác */
+}
