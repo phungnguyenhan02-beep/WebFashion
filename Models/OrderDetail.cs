@@ -11,7 +11,8 @@ namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class OrderDetail
     {
         public int OrderDetailID { get; set; }
@@ -19,7 +20,9 @@ namespace LT_WebThoiTrang.Models
         public Nullable<int> ProductID { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
-    
+
+        [NotMapped]
+        public string size { get; set; }
         public virtual Order Order { get; set; }
         public virtual Product Product{ get; set; }
     }
