@@ -149,10 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ErrorHandlingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserAddressesController.cs" />
@@ -312,7 +315,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Admin\NewFolder1\" />
+    <Folder Include="Views\Account\" />
     <Folder Include="Views\Category\" />
+    <Folder Include="Views\ErrorHandling\" />
+    <Folder Include="Views\HomePage\" />
     <Folder Include="Views\Search\" />
     <Folder Include="Views\UserAddresses\" />
   </ItemGroup>
