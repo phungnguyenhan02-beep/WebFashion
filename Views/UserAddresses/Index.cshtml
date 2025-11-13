@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow p-4">
+                <h4 class="text-center mb-4"><i class="fa-solid fa-address-card"></i> Thông tin địa chỉ</h4>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success text-center">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+
+               
+</div>
+
+

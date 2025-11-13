@@ -1,0 +1,65 @@
+﻿@model LT_WebThoiTrang.ViewModels.AddressUserViewModel
+
+
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow p-4">
+                <h4 class="text-center mb-4"><i class="fa-solid fa-address-card"></i> Thông tin địa chỉ</h4>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success text-center">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+
+                @using (Html.BeginForm("Update", "UserAddresss", FormMethod.Post))
+                {
+                    @Html.HiddenFor(m => m.IdUser)
+
+                    <div class="form-group mb-3">
+                        <label for="FullName">Họ và tên</label>
+                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", placeholder = "Nhập họ tên" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="Phone">Số điện thoại</label>
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="Province">Tỉnh/Thành phố</label>
+                        @Html.TextBoxFor(m => m.Province, new { @class = "form-control", placeholder = "Nhập tỉnh/thành phố" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="Town">Quận/Huyện</label>
+                        @Html.TextBoxFor(m => m.Town, new { @class = "form-control", placeholder = "Nhập quận/huyện" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="Block">Phường/Xã</label>
+                        @Html.TextBoxFor(m => m.Block, new { @class = "form-control", placeholder = "Nhập phường/xã" })
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="SpecificAddress">Địa chỉ cụ thể</label>
+                        @Html.TextBoxFor(m => m.SpecificAddress, new { @class = "form-control", placeholder = "Số nhà, tên đường..." })
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">
+                        <i class="fa-solid fa-floppy-disk"></i> Cập nhật thông tin
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
