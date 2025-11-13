@@ -1,0 +1,54 @@
+﻿@model LT_WebThoiTrang.Models.Cart
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="fw-bold mb-4">Giỏ hàng của bạn</h3>
+
+@if (Model.Items.Count == 0)
+{
+    <div class="alert alert-info">Giỏ hàng trống. <a href="/ProductPage">Mua sắm ngay</a></div>
+}
+else
+{
+    <table class="table align-middle">
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Kích thước</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Tổng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.ImageUrl" class="me-2 rounded" style="width:60px" />
+                        @item.ProductName
+                    </td>
+                    <td>@item.Size</td>
+                    <td>
+                        <form action="/Carts/UpdateItem" method="post" class="d-flex align-items-center">
+                            <input type="hidden" name="ProductID" value="@item.ProductID" />
+                            <input type="number" name="Quantity" value="@item.Quantity" min="1" class="form-control form-control-sm w-50" />
+                            <button class="btn btn-sm btn-outline-secondary ms-2">Cập nhật</button>
+                        </form>
+                    </td>
+                    <td>@string.Format("{0:N0} đ", item.Price)</td>
+                    <td>@string.Format("{0:N0} đ", item.TotalPrice)</td>
+                    <td><a href="/Carts/RemoveItem/@item.ProductID" class="btn btn-sm btn-danger">Xóa</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-end mt-4">
+        <h5>Tổng cộng: <span class="fw-bold">@string.Format("{0:N0} đ", Model.Total)</span></h5>
+        <a href="/Carts/Checkout" class="btn btn-dark mt-3 px-5">Thanh toán</a>
+    </div>
+}
