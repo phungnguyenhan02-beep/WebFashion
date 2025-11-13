@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - Web Thời Trang</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark" href="@Url.Action("Home_page", "HomePage")">NguyenHan Fashion</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Home_page", "HomePage")">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ProductPage">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Carts/ViewCart">Giỏ hàng</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Account/OrderHistory">Đơn hàng</a></li>
+
+                    @if (Session["Email"] == null)
+                    {
+                        <!-- Chưa đăng nhập -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Sign_in", "Account")">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Register", "Account")">Đăng ký</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <!-- Đã đăng nhập -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                                Xin chào, @Session["Email"]
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="@Url.Action("ChangePassword", "Account")">Đổi mật khẩu</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Logout", "Account")">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        @RenderBody()
+    </main>
+
+    <footer class="text-center py-4 border-top text-muted small">
+        © @DateTime.Now.Year LT Fashion - All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/site.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
