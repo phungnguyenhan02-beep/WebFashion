@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Data.Entity;

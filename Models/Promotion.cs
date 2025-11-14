@@ -7,30 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class AddressUser
+    public partial class Promotion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AddressUser()
+        public Promotion()
         {
-            this.Orders = new HashSet<Order>();
+            this.ProductPromotions = new HashSet<ProductPromotion>();
         }
     
-        public int IdAddress { get; set; }
-        public Nullable<int> IdUser { get; set; }
-        public string FullName_ { get; set; }
-        public string Phone { get; set; }
-        public string Province { get; set; }
-        public string Town { get; set; }
-        public string Block { get; set; }
-        public string SpecificAddress { get; set; }
+        public int PromotionID { get; set; }
+        public string PromotionName { get; set; }
+        public string Description { get; set; }
+        public Nullable<decimal> DiscountAmount { get; set; }
+        public Nullable<decimal> DiscountPercentage { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public System.DateTime EndDate { get; set; }
     
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<ProductPromotion> ProductPromotions { get; set; }
     }
 }

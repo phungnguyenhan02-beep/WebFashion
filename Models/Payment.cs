@@ -7,18 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductColor
+    public partial class Payment
     {
-        public int ProductColorID { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public Nullable<int> ColorID { get; set; }
+        public int PaymentID { get; set; }
+        public Nullable<int> OrderID { get; set; }
+        public decimal PaymentAmount { get; set; }
+        public System.DateTime PaymentDate { get; set; }
+        public Nullable<int> PaymentMethod { get; set; }
+        public Nullable<int> PaymentStatus { get; set; }
+        public string TransactionID { get; set; }
     
-        public virtual Color Color { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

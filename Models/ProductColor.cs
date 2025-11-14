@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductSize
+    public partial class ProductColor
     {
-        public int ProductSizeID { get; set; }
+        public int ProductColorID { get; set; }
         public Nullable<int> ProductID { get; set; }
-        public Nullable<int> SizeID { get; set; }
+        public Nullable<int> ColorID { get; set; }
     
+        public virtual Color Color { get; set; }
         public virtual Product Product { get; set; }
-        public virtual Size Size { get; set; }
     }
 }

@@ -7,18 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductPromotion
+    public partial class ImageProduct
     {
-        public int ProductPromotionID { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public Nullable<int> PromotionID { get; set; }
+        public int IdImage { get; set; }
+        public int ProductsID { get; set; }
+        public string ImageURL { get; set; }
     
         public virtual Product Product { get; set; }
-        public virtual Promotion Promotion { get; set; }
     }
 }

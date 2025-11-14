@@ -7,20 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Stock
+    public partial class ProductPromotion
     {
-        public int StockID { get; set; }
+        public int ProductPromotionID { get; set; }
         public Nullable<int> ProductID { get; set; }
-        public Nullable<int> StockType { get; set; }
-        public int Quantity { get; set; }
-        public Nullable<System.DateTime> TransactionDate { get; set; }
-        public string Notes { get; set; }
+        public Nullable<int> PromotionID { get; set; }
     
         public virtual Product Product { get; set; }
+        public virtual Promotion Promotion { get; set; }
     }
 }

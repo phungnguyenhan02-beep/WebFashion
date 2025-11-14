@@ -7,17 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class ImageProduct
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    public partial class OrderDetail
     {
-        public int IdImage { get; set; }
-        public int ProductsID { get; set; }
-        public string ImageURL { get; set; }
-    
+        public int OrderDetailID { get; set; }
+        public Nullable<int> OrderID { get; set; }
+        public Nullable<int> ProductID { get; set; }
+        public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
+
+        [NotMapped]
+        public string size { get; set; }
+        public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+     
     }
 }

@@ -138,17 +138,20 @@
     <Content Include="Content\Images\logo-levents-global-9411-1722410795.jpg" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
+    <None Include=".editorconfig" />
+    <Content Include=".gitignore" />
+    <Content Include=".gitattributes" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
-    <Content Include="Scripts\Models\Model1.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\Models\Model1.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
@@ -162,6 +165,12 @@
     <Content Include="Content\Admin\JS\earningsChart.js" />
     <Content Include="Content\Admin\JS\pageLength.js" />
     <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -181,88 +190,88 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\AddressUser.cs">
+    <Compile Include="Models\AddressUser.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\AddressUserViewModel.cs" />
-    <Compile Include="Scripts\Models\ApplicationDbContext.cs" />
-    <Compile Include="Scripts\Models\Cart.cs" />
-    <Compile Include="Scripts\Models\CartItem.cs" />
-    <Compile Include="Scripts\Models\Category.cs">
+    <Compile Include="Models\AddressUserViewModel.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\CheckOutViewModels.cs" />
-    <Compile Include="Scripts\Models\Color.cs">
+    <Compile Include="Models\CheckOutViewModels.cs" />
+    <Compile Include="Models\Color.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\HomeViewModel.cs" />
-    <Compile Include="Scripts\Models\ImageProduct.cs">
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\ImageProduct.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\InventoryAddStockViewModel.cs" />
-    <Compile Include="Scripts\Models\InventoryLog.cs">
+    <Compile Include="Models\InventoryAddStockViewModel.cs" />
+    <Compile Include="Models\InventoryLog.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\Model1.Context.cs">
+    <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\Model1.cs">
+    <Compile Include="Models\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\Model1.Designer.cs">
+    <Compile Include="Models\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\NewOrderDetailViewModel.cs" />
-    <Compile Include="Scripts\Models\NewOrderHistoryViewModel.cs" />
-    <Compile Include="Scripts\Models\Order.cs">
+    <Compile Include="Models\NewOrderDetailViewModel.cs" />
+    <Compile Include="Models\NewOrderHistoryViewModel.cs" />
+    <Compile Include="Models\Order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\OrderDetail.cs">
+    <Compile Include="Models\OrderDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\OrderDetailViewModel.cs" />
-    <Compile Include="Scripts\Models\OrderHistoryViewModel.cs" />
-    <Compile Include="Scripts\Models\Payment.cs">
+    <Compile Include="Models\OrderDetailViewModel.cs" />
+    <Compile Include="Models\OrderHistoryViewModel.cs" />
+    <Compile Include="Models\Payment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\PaymentWebHookModel.cs" />
-    <Compile Include="Scripts\Models\Product.cs">
+    <Compile Include="Models\PaymentWebHookModel.cs" />
+    <Compile Include="Models\Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\ProductColor.cs">
+    <Compile Include="Models\ProductColor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\ProductPromotion.cs">
+    <Compile Include="Models\ProductPromotion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\ProductSize.cs">
+    <Compile Include="Models\ProductSize.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\ProductStock.cs">
+    <Compile Include="Models\ProductStock.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\ProductViewModelcs.cs" />
-    <Compile Include="Scripts\Models\Promotion.cs">
+    <Compile Include="Models\ProductViewModelcs.cs" />
+    <Compile Include="Models\Promotion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\PromotionViewModel.cs" />
-    <Compile Include="Scripts\Models\Size.cs">
+    <Compile Include="Models\PromotionViewModel.cs" />
+    <Compile Include="Models\Size.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\Stock.cs">
+    <Compile Include="Models\Stock.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\User.cs">
+    <Compile Include="Models\User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Models\UserAddressViewModel.cs" />
-    <Compile Include="Scripts\Models\UserAdminViewModel.cs" />
+    <Compile Include="Models\UserAddressViewModel.cs" />
+    <Compile Include="Models\UserAdminViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SendEmail.cs" />
     <Compile Include="Services\UserServices.cs" />
@@ -285,11 +294,11 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Scripts\Models\Model1.edmx">
+    <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Scripts\Models\Model1.edmx.diagram">
+    <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Content\Images\photo1705744522478-1705744522756640102056-639x400.webp" />
@@ -338,12 +347,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

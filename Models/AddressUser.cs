@@ -7,29 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LT_WebThoiTrang.Scripts.Models
+namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductStock
+    public partial class AddressUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductStock()
+        public AddressUser()
         {
-            this.InventoryLogs = new HashSet<InventoryLog>();
+            this.Orders = new HashSet<Order>();
         }
     
-        public int ProductStockID { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public Nullable<int> ColorID { get; set; }
-        public Nullable<int> SizeID { get; set; }
-        public Nullable<int> Quantity { get; set; }
+        public int IdAddress { get; set; }
+        public Nullable<int> IdUser { get; set; }
+        public string FullName_ { get; set; }
+        public string Phone { get; set; }
+        public string Province { get; set; }
+        public string Town { get; set; }
+        public string Block { get; set; }
+        public string SpecificAddress { get; set; }
     
-        public virtual Color Color { get; set; }
-        public virtual Product Product { get; set; }
-        public virtual Size Size { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InventoryLog> InventoryLogs { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
