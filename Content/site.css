@@ -1,0 +1,90 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+}
+
+.nav-link {
+    color: #000 !important;
+    transition: 0.2s;
+}
+
+    .nav-link:hover {
+        color: #666 !important;
+    }
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: 0.3s;
+}
+
+.product-card img {
+    transition: 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+/* === PRODUCT PAGE STYLES === */
+
+#mainImage {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+    #mainImage:hover {
+        transform: scale(1.02);
+    }
+
+#supplementaryImages img {
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+    #supplementaryImages img:hover {
+        border: 2px solid #000;
+        transform: scale(1.1);
+    }
+
+.size-btn {
+    border-radius: 30px !important;
+    min-width: 45px;
+}
+
+    .size-btn.active {
+        background-color: #000 !important;
+        color: #fff !important;
+    }
+
+#priceDisplay {
+    font-size: 1.6rem;
+}
+
+#discountInfo {
+    font-size: 1rem;
+}
+
+/* Related products */
+#relatedProducts .card {
+    transition: all 0.3s;
+}
+
+    #relatedProducts .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+/* Responsive fix */
+@media (max-width: 768px) {
+    #mainImage {
+        max-height: 350px;
+    }
+
+    #relatedProducts .card img {
+        height: 200px !important;
+    }
+}
+
+
