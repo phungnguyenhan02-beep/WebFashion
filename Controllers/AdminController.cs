@@ -79,7 +79,7 @@ namespace LT_WebThoiTrang.Controllers
 
 
         //Get:Admin/MangeProducts
-        public ActionResult MangeProducts()
+        public ActionResult ManageProducts()
         {
             // lấy tất cả  sản phẩm 
             var products = db.Products.ToList();
@@ -109,7 +109,7 @@ namespace LT_WebThoiTrang.Controllers
                         // lấy size value  từ bảng sizes dựa trên size Id
                         SizeValue = db.Sizes
                                 .Where(s => s.SizeID == ps.SizeID)
-                                .Select(s => s.Size1)
+                                .Select(s => s.SizeName)
                                 .FirstOrDefault(),
                         Quantity = (int)ps.Quantity
                     }).ToList(),
@@ -136,12 +136,13 @@ namespace LT_WebThoiTrang.Controllers
         {
             var model = new ProductViewModelcs
             {
-               /* Colors = db.Colors.ToList(),
-                Sizes = db.Sizes.ToList(),*/
+                Colors = db.Colors.ToList(),
+                Sizes = db.Sizes.ToList(),
             };
-            ReloadHardcodedData(model);
-
+            ViewBag.Categories = new SelectList(db.Categories, "CategoryID", "CategoryName");
             return View(model);
+
+            
         }
         [HttpPost]
         public ActionResult CreateProducts(ProductViewModelcs model, HttpPostedFileBase ImageFile)
@@ -164,7 +165,8 @@ namespace LT_WebThoiTrang.Controllers
                     else
                     {
                         ViewBag.ErrorMessage = "Invalid file type. Please upload a JPG, JPEG, PNG, or GIF image.";
-                        ReloadHardcodedData(model);
+                        model.Colors = db.Colors.ToList();
+                        model.Sizes = db.Sizes.ToList();
                         return View(model);
                     }
                 }
@@ -200,7 +202,7 @@ namespace LT_WebThoiTrang.Controllers
                             {
                                 // Tạo tên file duy nhất cho mỗi ảnh phụ
                                 string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "_" + Guid.NewGuid().ToString("N").Substring(0, 8) + "_sub" + extension;
-                                string path = Path.Combine(Server.MapPath("~/Images/product-images/"), fileName);
+                                string path = Path.Combine(Server.MapPath("~/Content/Images/product-images/"), fileName);
                                 additionalImage.SaveAs(path);
 
                                 var imageProduct = new ImageProduct
@@ -217,42 +219,11 @@ namespace LT_WebThoiTrang.Controllers
                 return RedirectToAction("ManageProducts");
             }
             // Nếu ModelState không hợp lệ, tải lại danh sách Colors và Sizes
-            ReloadHardcodedData(model);
+            model.Colors = db.Colors.ToList();
+            model.Sizes = db.Sizes.ToList();
+            ViewBag.Categories = new SelectList(db.Categories, "CategoryID", "CategoryName");
             return View(model);            
-        }
-        private void ReloadHardcodedData(ProductViewModelcs model)
-        {
-            model.Sizes = new List<Size>
-        {
-                new Size { SizeID = 11, Size1 = "S" },
-                new Size { SizeID = 12, Size1 = "M" },
-                new Size { SizeID = 13, Size1 = "L" },
-                new Size { SizeID = 14, Size1 = "XL" },
-                new Size { SizeID = 15, Size1 = "2XL" },
-        };
-
-            model.Colors = new List<Color>
-        {
-             new Color { ColorID = 1, Color1 = "Red" },
-             new Color { ColorID = 2, Color1 = "Blue" },
-             new Color { ColorID = 3, Color1 = "Green" },
-             new Color { ColorID = 4, Color1 = "Yellow" },
-             new Color { ColorID = 5, Color1 = "Black" },
-             new Color { ColorID = 6, Color1 = "White" },
-
-        };
-
-            ViewBag.Categories = new List<SelectListItem>
-        {
-                new SelectListItem{ Value ="1",Text="T-Shirt & Polo"},
-                new SelectListItem{ Value ="2",Text="Shirts"},
-                new SelectListItem{ Value ="3",Text="SweatShirt"},
-                new SelectListItem{ Value ="4",Text="SWEATER"},
-                new SelectListItem{ Value ="5",Text="Pants"},
-                new SelectListItem{ Value ="6",Text="Shorts"},
-        };
-        }
-
+        }       
         [HttpGet]
         public ActionResult EditProducts(int? id)
         {
@@ -607,8 +578,8 @@ namespace LT_WebThoiTrang.Controllers
                     ProductID = (int)ps.ProductID,
                     ProductName = ps.Product.ProductName,
                     MainImageUrl = ps.Product.ImageURL,
-                    Size = ps.Size.Size1,// size1 là sizeValue
-                    Color = ps.Color.Color1,
+                    Size = ps.Size.SizeName,// size1 là sizeValue
+                    Color = ps.Color.ColorName,
                     StockQuantity = (int)ps.Quantity
                 }).ToList();
             return View(inventoryData); 
@@ -633,7 +604,7 @@ namespace LT_WebThoiTrang.Controllers
                 ProductStockID= productStock.ProductStockID,
                 ProductID = (int)productStock.ProductID,
                 ProductName = productStock.Product.ProductName,
-                Size = productStock.Size.Size1, 
+                Size = productStock.Size.SizeName, 
                 CurrentStockQuantity = (int)productStock.Quantity
             };
             return PartialView("_AddStock",model);

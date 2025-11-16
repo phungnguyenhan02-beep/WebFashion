@@ -49,7 +49,7 @@
 
         <div class="form-group">
             <label for="Color">Màu Sắc</label>
-            @Html.DropDownListFor(m => m.SelectedColorID, new SelectList(Model.Colors, "ColorID", "Color1"), "-- Chọn Màu --", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.SelectedColorID, new SelectList(Model.Colors, "ColorID", "ColorName"), "-- Chọn Màu --", new { @class = "form-control" })
         </div>
 
         <div class="form-group">
@@ -58,7 +58,7 @@
                 @foreach (var size in Model.Sizes)
                 {
                     <label class="btn btn-outline-primary m-1">
-                        <input type="checkbox" name="SelectedSizeIDs" value="@size.SizeID" autocomplete="off"> @size.Size1
+                        <input type="checkbox" name="SelectedSizeIDs" value="@size.SizeID" autocomplete="off"> @size.SizeName
                     </label>
                 }
             </div>

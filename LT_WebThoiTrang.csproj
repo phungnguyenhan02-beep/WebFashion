@@ -136,6 +136,8 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\logo-levents-global-9411-1722410795.jpg" />
+    <Content Include="Content\Images\product-images\20251117003354392_f074cc42.jpeg" />
+    <Content Include="Content\Images\product-images\20251117003354632_c1b6e05d_sub.jpeg" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <None Include=".editorconfig" />
@@ -315,7 +317,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Admin\Shared\_MasterLayout.cshtml" />
     <Content Include="Views\Admin\DashBoard.cshtml" />
-    <Content Include="Views\Admin\MangeProducts.cshtml" />
+    <Content Include="Views\Admin\ManageProducts.cshtml" />
     <Content Include="Views\Admin\MangeCategory.cshtml" />
     <Content Include="Views\Admin\CreateProducts.cshtml" />
     <Content Include="Views\Admin\EditProducts.cshtml" />
@@ -354,7 +356,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Admin\NewFolder1\" />
-    <Folder Include="Content\Images\product-images\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Views\ErrorHandling\" />
     <Folder Include="Views\Search\" />

@@ -91,7 +91,7 @@ namespace LT_WebThoiTrang.Controllers
                 .Where(ps => ps.ProductID == productID)
                 .Select(ps => db.Sizes
                         .Where(s => s.SizeID == ps.SizeID)
-                        .Select(s =>s.Size1)
+                        .Select(s =>s.SizeName)
                         .FirstOrDefault())
             .Distinct()
             .ToList();
