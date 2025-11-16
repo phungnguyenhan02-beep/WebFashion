@@ -30,7 +30,7 @@
             <PropertyRef Name="ColorID" />
           </Key>
           <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ColorName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ImageProduct">
           <Key>
@@ -60,6 +60,7 @@
           <Property Name="ProductID" Type="int" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="UnitPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="size" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -152,7 +153,7 @@
             <PropertyRef Name="SizeID" />
           </Key>
           <Property Name="SizeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Size" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SizeName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Stock">
           <Key>
@@ -572,9 +573,9 @@
             <PropertyRef Name="ColorID" />
           </Key>
           <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Color1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ProductColors" Relationship="Self.FK_ProductColors_Colors" FromRole="Colors" ToRole="ProductColors" />
           <NavigationProperty Name="ProductStocks" Relationship="WebThoiTrangModel.FK_ProductStock_Color" FromRole="Color" ToRole="ProductStock" />
+          <Property Name="ColorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -587,6 +588,7 @@
           <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK_OrderDetails_Orders" FromRole="OrderDetails" ToRole="Orders" />
           <NavigationProperty Name="Product" Relationship="Self.FK_OrderDetails_Products" FromRole="OrderDetails" ToRole="Products" />
+          <Property Name="size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -1077,9 +1079,9 @@
             <PropertyRef Name="SizeID" />
           </Key>
           <Property Name="SizeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Size1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ProductSizes" Relationship="WebThoiTrangModel.FK_ProductSizes_Sizes" FromRole="Size" ToRole="ProductSize" />
           <NavigationProperty Name="ProductStocks" Relationship="WebThoiTrangModel.FK_ProductStock_Size" FromRole="Size" ToRole="ProductStock" />
+          <Property Name="SizeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_ProductSizes_Sizes">
           <End Type="WebThoiTrangModel.Size" Role="Size" Multiplicity="0..1">
@@ -1148,14 +1150,15 @@
           <EntitySetMapping Name="Colors">
             <EntityTypeMapping TypeName="WebThoiTrangModel.Color">
               <MappingFragment StoreEntitySet="Colors">
+                <ScalarProperty Name="ColorName" ColumnName="ColorName" />
                 <ScalarProperty Name="ColorID" ColumnName="ColorID" />
-                <ScalarProperty Name="Color1" ColumnName="Color" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetails">
             <EntityTypeMapping TypeName="WebThoiTrangModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="size" ColumnName="size" />
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -1310,7 +1313,7 @@
           <EntitySetMapping Name="Sizes">
             <EntityTypeMapping TypeName="WebThoiTrangModel.Size">
               <MappingFragment StoreEntitySet="Sizes">
-                <ScalarProperty Name="Size1" ColumnName="Size" />
+                <ScalarProperty Name="SizeName" ColumnName="SizeName" />
                 <ScalarProperty Name="SizeID" ColumnName="SizeID" />
               </MappingFragment>
             </EntityTypeMapping>

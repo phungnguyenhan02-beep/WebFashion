@@ -139,36 +139,8 @@ namespace LT_WebThoiTrang.Controllers
                /* Colors = db.Colors.ToList(),
                 Sizes = db.Sizes.ToList(),*/
             };
-            model.Sizes = new List<Size>
-            {
-                new Size { SizeID = 11, Size1 = "S" },
-                new Size { SizeID = 12, Size1 = "M" },
-                new Size { SizeID = 13, Size1 = "L" },
-                new Size { SizeID = 14, Size1 = "XL" },
-                new Size { SizeID = 15, Size1 = "2XL" },
+            ReloadHardcodedData(model);
 
-            };
-            model.Colors = new List<Color>
-            {
-             new Color { ColorID = 1, Color1 = "Red" },
-             new Color { ColorID = 2, Color1 = "Blue" },
-             new Color { ColorID = 3, Color1 = "Green" },
-             new Color { ColorID = 4, Color1 = "Yellow" },
-             new Color { ColorID = 5, Color1 = "Black" },
-             new Color { ColorID = 6, Color1 = "White" },
-           
-            };
-
-
-            ViewBag.Categories = new List<SelectListItem>
-            {
-                new SelectListItem{ Value ="1",Text="T-Shirt & Polo"},
-                new SelectListItem{ Value ="2",Text="Shirts"},
-                new SelectListItem{ Value ="3",Text="SweatShirt"},
-                new SelectListItem{ Value ="4",Text="SWEATER"},
-                new SelectListItem{ Value ="5",Text="Pants"},
-                new SelectListItem{ Value ="6",Text="Shorts"},
-            };
             return View(model);
         }
         [HttpPost]
@@ -192,8 +164,7 @@ namespace LT_WebThoiTrang.Controllers
                     else
                     {
                         ViewBag.ErrorMessage = "Invalid file type. Please upload a JPG, JPEG, PNG, or GIF image.";
-                        model.Colors = db.Colors.ToList();
-                        model.Sizes = db.Sizes.ToList();
+                        ReloadHardcodedData(model);
                         return View(model);
                     }
                 }

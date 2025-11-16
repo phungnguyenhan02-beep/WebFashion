@@ -22,7 +22,7 @@ namespace LT_WebThoiTrang.Models
         }
     
         public int SizeID { get; set; }
-        public string Size1 { get; set; }
+        public string SizeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductSize> ProductSizes { get; set; }

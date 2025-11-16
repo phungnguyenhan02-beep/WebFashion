@@ -44,6 +44,7 @@
         <div class="form-group">
             <label for="Category">Loại Sản Phẩm</label>
             @Html.DropDownListFor(model => model.Product.CategoryID, ViewBag.Categories as IEnumerable<SelectListItem>, "-- Chọn Loại Sản Phẩm --", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Product.CategoryID, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">

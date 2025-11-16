@@ -22,7 +22,7 @@ namespace LT_WebThoiTrang.Models
         }
     
         public int ColorID { get; set; }
-        public string Color1 { get; set; }
+        public string ColorName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductColor> ProductColors { get; set; }
