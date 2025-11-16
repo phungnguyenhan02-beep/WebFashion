@@ -7,6 +7,7 @@ namespace LT_WebThoiTrang.Models
 {
     public class NewOrderDetailViewModel
     {
+        public int? OrderId { get; set; }
         public int? ProductID { get; set; }
         public string ProductName { get; set; }
         public int Quantity { get; set; }

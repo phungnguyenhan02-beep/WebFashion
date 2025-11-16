@@ -11,18 +11,13 @@ namespace LT_WebThoiTrang.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public partial class OrderDetail
+    
+    public partial class sysdiagram
     {
-        public int OrderDetailID { get; set; }
-        public Nullable<int> OrderID { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        [NotMapped]
-        public string size {  get; set; }   
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

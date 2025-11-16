@@ -36,11 +36,12 @@ namespace LT_WebThoiTrang.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductSize> ProductSizes { get; set; }
         public virtual DbSet<Promotion> Promotions { get; set; }
-        public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ImageProduct> ImageProducts { get; set; }
         public virtual DbSet<ProductStock> ProductStocks { get; set; }
         public virtual DbSet<InventoryLog> InventoryLogs { get; set; }
+        public virtual DbSet<Size> Sizes { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

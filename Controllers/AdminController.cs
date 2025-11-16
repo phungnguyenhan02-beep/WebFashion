@@ -136,10 +136,39 @@ namespace LT_WebThoiTrang.Controllers
         {
             var model = new ProductViewModelcs
             {
-                Colors = db.Colors.ToList(),
-                Sizes = db.Sizes.ToList(),
+               /* Colors = db.Colors.ToList(),
+                Sizes = db.Sizes.ToList(),*/
             };
-            ViewBag.Categories = new SelectList(db.Categories, "CategoryId", "CategoryName");
+            model.Sizes = new List<Size>
+            {
+                new Size { SizeID = 11, Size1 = "S" },
+                new Size { SizeID = 12, Size1 = "M" },
+                new Size { SizeID = 13, Size1 = "L" },
+                new Size { SizeID = 14, Size1 = "XL" },
+                new Size { SizeID = 15, Size1 = "2XL" },
+
+            };
+            model.Colors = new List<Color>
+            {
+             new Color { ColorID = 1, Color1 = "Red" },
+             new Color { ColorID = 2, Color1 = "Blue" },
+             new Color { ColorID = 3, Color1 = "Green" },
+             new Color { ColorID = 4, Color1 = "Yellow" },
+             new Color { ColorID = 5, Color1 = "Black" },
+             new Color { ColorID = 6, Color1 = "White" },
+           
+            };
+
+
+            ViewBag.Categories = new List<SelectListItem>
+            {
+                new SelectListItem{ Value ="1",Text="T-Shirt & Polo"},
+                new SelectListItem{ Value ="2",Text="Shirts"},
+                new SelectListItem{ Value ="3",Text="SweatShirt"},
+                new SelectListItem{ Value ="4",Text="SWEATER"},
+                new SelectListItem{ Value ="5",Text="Pants"},
+                new SelectListItem{ Value ="6",Text="Shorts"},
+            };
             return View(model);
         }
         [HttpPost]
@@ -156,9 +185,9 @@ namespace LT_WebThoiTrang.Controllers
                     if (allowedExtensions.Contains(extension))
                     {
                         string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "_" + Guid.NewGuid().ToString("N").Substring(0, 8) + extension;
-                        string path = Path.Combine(Server.MapPath("~/image/prodcut-image/"), fileName);
+                        string path = Path.Combine(Server.MapPath("~/Content/Images/product-images/"), fileName);
                         ImageFile.SaveAs(path);
-                        model.Product.ImageURL = fileName; ;
+                        model.Product.ImageURL = fileName; 
                     }
                     else
                     {
@@ -181,7 +210,7 @@ namespace LT_WebThoiTrang.Controllers
                         {
                             ProductID = model.Product.ProductID,
                             ColorID = model.SelectedColorID,
-                            SizeID = sizeId,
+                            SizeID = sizeId,                           
                             Quantity = model.Quantity
                         };
                         db.ProductStocks.Add(productStock);
@@ -200,7 +229,7 @@ namespace LT_WebThoiTrang.Controllers
                             {
                                 // Tạo tên file duy nhất cho mỗi ảnh phụ
                                 string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "_" + Guid.NewGuid().ToString("N").Substring(0, 8) + "_sub" + extension;
-                                string path = Path.Combine(Server.MapPath("~/image/product-image/"), fileName);
+                                string path = Path.Combine(Server.MapPath("~/Images/product-images/"), fileName);
                                 additionalImage.SaveAs(path);
 
                                 var imageProduct = new ImageProduct
@@ -217,11 +246,42 @@ namespace LT_WebThoiTrang.Controllers
                 return RedirectToAction("ManageProducts");
             }
             // Nếu ModelState không hợp lệ, tải lại danh sách Colors và Sizes
-            model.Colors = db.Colors.ToList();
-            model.Sizes = db.Sizes.ToList();
-            ViewBag.Categories = new SelectList(db.Categories, "CategoryID", "CategoryName");
-            return View(model);
+            ReloadHardcodedData(model);
+            return View(model);            
         }
+        private void ReloadHardcodedData(ProductViewModelcs model)
+        {
+            model.Sizes = new List<Size>
+        {
+                new Size { SizeID = 11, Size1 = "S" },
+                new Size { SizeID = 12, Size1 = "M" },
+                new Size { SizeID = 13, Size1 = "L" },
+                new Size { SizeID = 14, Size1 = "XL" },
+                new Size { SizeID = 15, Size1 = "2XL" },
+        };
+
+            model.Colors = new List<Color>
+        {
+             new Color { ColorID = 1, Color1 = "Red" },
+             new Color { ColorID = 2, Color1 = "Blue" },
+             new Color { ColorID = 3, Color1 = "Green" },
+             new Color { ColorID = 4, Color1 = "Yellow" },
+             new Color { ColorID = 5, Color1 = "Black" },
+             new Color { ColorID = 6, Color1 = "White" },
+
+        };
+
+            ViewBag.Categories = new List<SelectListItem>
+        {
+                new SelectListItem{ Value ="1",Text="T-Shirt & Polo"},
+                new SelectListItem{ Value ="2",Text="Shirts"},
+                new SelectListItem{ Value ="3",Text="SweatShirt"},
+                new SelectListItem{ Value ="4",Text="SWEATER"},
+                new SelectListItem{ Value ="5",Text="Pants"},
+                new SelectListItem{ Value ="6",Text="Shorts"},
+        };
+        }
+
         [HttpGet]
         public ActionResult EditProducts(int? id)
         {
