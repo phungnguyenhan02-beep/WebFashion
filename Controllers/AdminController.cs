@@ -78,7 +78,7 @@ namespace LT_WebThoiTrang.Controllers
         }
 
 
-        //Get:Admin/MangeProducts
+        //Get:Admin/ManageProducts
         public ActionResult ManageProducts()
         {
             // lấy tất cả  sản phẩm 
@@ -125,7 +125,7 @@ namespace LT_WebThoiTrang.Controllers
         }
 
         //GET Admin/ Mange Category
-        public ActionResult MangeCategory()
+        public ActionResult ManageCategory()
         {
             var categories = db.Categories.ToList();// lấy danh sách tất cả các loại sản phẩm 
             return View(categories);
@@ -312,7 +312,7 @@ namespace LT_WebThoiTrang.Controllers
                     // lưu thay đổi
                     db.Entry(product).State = EntityState.Modified;
                     db.SaveChanges();
-                    return RedirectToAction("MangeProduct");
+                    return RedirectToAction("ManageProducts");
                 }
             }
             // nếu có lỗi ,truyền lại dữ liệu cần thiết cho view 
@@ -336,7 +336,7 @@ namespace LT_WebThoiTrang.Controllers
                     return HttpNotFound();
                 }
                 // xóa ảnh chính của sản phẩm khỏi thư mục 
-                var mainImagePath = Path.Combine(Server.MapPath("~/image/product-image"), product.ImageURL);
+                var mainImagePath = Path.Combine(Server.MapPath("~/Image/product-image"), product.ImageURL);
                 if (System.IO.File.Exists(mainImagePath))
                 {
                     System.IO.File.Delete(mainImagePath);
@@ -352,7 +352,7 @@ namespace LT_WebThoiTrang.Controllers
                 var additionalImages = db.ImageProducts.Where(ip => ip.ProductsID == id).ToList();
                 foreach (var image in additionalImages)
                 {
-                    var additionalImagePath = Path.Combine(Server.MapPath("~/image/product-image"), image.ImageURL);
+                    var additionalImagePath = Path.Combine(Server.MapPath("~/Image/product-image"), image.ImageURL);
                     if (System.IO.File.Exists(additionalImagePath))
                     {
                         System.IO.File.Delete(additionalImagePath);
@@ -370,7 +370,7 @@ namespace LT_WebThoiTrang.Controllers
                 Console.WriteLine("Lỗi khi xóa sản phẩm " + ex.Message);
                 TempData["ErrorMessage"] = "Không thể xóa sản phẩm vì có dữ liệu liên quan trong đơn hàng ";
             }
-            return RedirectToAction("MangeProducts");
+            return RedirectToAction("ManageProducts");
 
         }
 
@@ -568,7 +568,7 @@ namespace LT_WebThoiTrang.Controllers
             return View();
         }
         //Get: Inventory
-        public ActionResult MangeInventory()
+        public ActionResult ManageInventory()
         {
             // lấy thông tin sản pghaamr và tồn kho 
             var inventoryData = db.ProductStocks

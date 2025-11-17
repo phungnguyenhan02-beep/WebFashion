@@ -318,7 +318,7 @@
     <Content Include="Views\Admin\Shared\_MasterLayout.cshtml" />
     <Content Include="Views\Admin\DashBoard.cshtml" />
     <Content Include="Views\Admin\ManageProducts.cshtml" />
-    <Content Include="Views\Admin\MangeCategory.cshtml" />
+    <Content Include="Views\Admin\ManageCategory.cshtml" />
     <Content Include="Views\Admin\CreateProducts.cshtml" />
     <Content Include="Views\Admin\EditProducts.cshtml" />
     <Content Include="Views\Admin\DeleteProducts.cshtml" />
@@ -328,7 +328,7 @@
     <Content Include="Views\Admin\AddStock.cshtml" />
     <Content Include="Views\Admin\_AddStock.cshtml" />
     <Content Include="Views\Admin\OrderHistory.cshtml" />
-    <Content Include="Views\Admin\MangeInventory.cshtml" />
+    <Content Include="Views\Admin\ManageInventory.cshtml" />
     <Content Include="Views\Admin\OrderHistorySuccess.cshtml" />
     <Content Include="Views\Admin\OrderDetailHistory.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
