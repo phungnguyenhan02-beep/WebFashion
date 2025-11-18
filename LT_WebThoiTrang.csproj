@@ -167,6 +167,7 @@
     <Content Include="Content\Admin\JS\earningsChart.js" />
     <Content Include="Content\Admin\JS\pageLength.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\ErrorHandling\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -357,7 +358,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Admin\NewFolder1\" />
     <Folder Include="Views\Category\" />
-    <Folder Include="Views\ErrorHandling\" />
     <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>

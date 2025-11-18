@@ -1,0 +1,120 @@
+﻿@model LT_WebThoiTrang.Models.Product
+@{
+    ViewBag.Title = Model.ProductName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mt-4">
+    <!-- Cột ảnh sản phẩm -->
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <img id="mainImage" src="@Model.ImageURL" class="card-img-top img-fluid" alt="@Model.ProductName" />
+            <div class="d-flex flex-wrap justify-content-center mt-3" id="supplementaryImages">
+                <!-- Ảnh phụ sẽ được load động bằng Ajax -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cột thông tin sản phẩm -->
+    <div class="col-md-6">
+        <h2 class="fw-bold">@Model.ProductName</h2>
+        <p class="text-muted">@Model.Description</p>
+
+        <div class="my-3">
+            <span class="fs-4 fw-bold text-danger" id="priceDisplay">
+                @string.Format("{0:N0} ₫", Model.Price)
+            </span>
+            <span id="discountInfo" class="text-success ms-2 fw-semibold"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="fw-semibold">Kích thước:</label>
+            <div id="sizeOptions" class="mt-2">
+                <!-- Các size sẽ được load động -->
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="fw-semibold">Số lượng:</label>
+            <input type="number" class="form-control w-25" id="quantity" value="1" min="1" />
+        </div>
+
+        <button class="btn btn-dark px-4" id="btnAddToCart">
+            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+        </button>
+    </div>
+</div>
+
+<hr class="my-5" />
+
+<!-- Sản phẩm liên quan -->
+<h4 class="fw-bold mb-3">Sản phẩm liên quan</h4>
+<div class="row" id="relatedProducts">
+    <!-- Sẽ được load động -->
+</div>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    const productId = @Model.ProductID;
+
+    // 🧩 Lấy ảnh phụ
+    $.getJSON("/ProductPage/GetProductImages", { productId: productId }, function (res) {
+        if (res.success) {
+            res.images.forEach(img => {
+                $("#supplementaryImages").append(
+                    `<img src="${img}" class="m-1 border rounded" style="width:80px;height:80px;cursor:pointer" onclick="changeMainImage('${img}')" />`
+                );
+            });
+        }
+    });
+
+    function changeMainImage(url) {
+        $("#mainImage").attr("src", url);
+    }
+
+    // 🧩 Lấy kích thước
+    $.getJSON("/ProductPage/GetProductSizeWithOutQuantity", { productID: productId }, function (res) {
+        if (res.success) {
+            res.sizes.forEach(size => {
+                $("#sizeOptions").append(
+                    `<button class="btn btn-outline-dark btn-sm m-1 size-btn">${size}</button>`
+                );
+            });
+
+            $(".size-btn").on("click", function () {
+                $(".size-btn").removeClass("active");
+                $(this).addClass("active");
+            });
+        }
+    });
+
+    // 🧩 Lấy sản phẩm liên quan
+    $.getJSON("/ProductPage/GetRelatedProducts", { productId: productId }, function (res) {
+        if (res.success) {
+            res.date.forEach(p => {
+                $("#relatedProducts").append(`
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="${p.ImageURL}" class="card-img-top" alt="${p.ProductName}" style="height:250px;object-fit:cover;">
+                            <div class="card-body text-center">
+                                <h6 class="fw-semibold">${p.ProductName}</h6>
+                                <p class="text-danger mb-1">${p.Price.toLocaleString()} ₫</p>
+                                <a href="/ProductPage/ProductPage/${p.ProductID}" class="btn btn-outline-dark btn-sm">Xem chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        }
+    });
+
+    // 🧩 Thêm giỏ hàng (demo)
+    $("#btnAddToCart").click(function () {
+        const size = $(".size-btn.active").text();
+        const qty = $("#quantity").val();
+        if (!size) return alert("Vui lòng chọn kích thước!");
+        alert(`Đã thêm ${qty} sản phẩm - Size ${size} vào giỏ hàng.`);
+    });
+    </script>
+}
